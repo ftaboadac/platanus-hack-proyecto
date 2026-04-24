@@ -913,7 +913,7 @@ class GameScene extends Phaser.Scene {
   spawnPowerup(x, y) {
     const types = ['S', 'F', 'L'];
     const colors = [0x00FFFF, 0xFFFF00, 0x00FF55];
-    const idx = Phaser.Math.Between(0, 3);
+    const idx = Phaser.Math.Between(0, 2);
     const t = types[idx], col = colors[idx];
     const g = this.add.graphics().setDepth(9);
     g.fillStyle(col, 1); g.fillRect(-13, -13, 26, 26);
