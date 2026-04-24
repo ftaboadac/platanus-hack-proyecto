@@ -1,5 +1,5 @@
 {
-  "game_name": "<FILL THIS>",
-  "description": "<FILL THIS>",
-  "player_mode": "two_player"
+  "game_name": "1982",
+  "description": "Vertical shooter set in the Malvinas war. Pilot an Argentine A-4 Skyhawk against British forces over the South Atlantic.",
+  "player_mode": "single_player"
 }
