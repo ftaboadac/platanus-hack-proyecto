@@ -412,12 +412,12 @@ class TitleScene extends Phaser.Scene {
   create() {
     this.idleTimer = 0;
     const bg = this.add.graphics();
-    bg.fillStyle(0x0a1a2e, 1); bg.fillRect(0, 0, W, H);
-    bg.fillStyle(0x1a3a5c, 1); bg.fillRect(0, H * 0.3, W, H * 0.7);
+    bg.fillStyle(0x0d1a0d, 1); bg.fillRect(0, 0, W, H);
+    bg.fillStyle(0x1a3a1a, 1); bg.fillRect(0, H * 0.3, W, H * 0.7);
 
-    bg.fillStyle(0x75AADB, 0.25); bg.fillRect(0, 0, W, H / 3);
-    bg.fillStyle(0xFFFFFF, 0.12); bg.fillRect(0, H / 3, W, H / 3);
-    bg.fillStyle(0x75AADB, 0.25); bg.fillRect(0, H * 2 / 3, W, H / 3);
+    bg.fillStyle(0x4a7a2a, 0.18); bg.fillRect(0, 0, W, H / 3);
+    bg.fillStyle(0xFFFFFF, 0.07); bg.fillRect(0, H / 3, W, H / 3);
+    bg.fillStyle(0x4a7a2a, 0.18); bg.fillRect(0, H * 2 / 3, W, H / 3);
 
     for (let i = 0; i < 40; i++) {
       bg.fillStyle(0xffffff, Phaser.Math.FloatBetween(0.3, 0.9));
@@ -425,29 +425,29 @@ class TitleScene extends Phaser.Scene {
     }
 
     const title1 = this.add.text(W / 2, 90, 'MALVINAS', {
-      fontFamily: 'monospace', fontSize: '76px', color: '#75AADB',
+      fontFamily: 'monospace', fontSize: '76px', color: '#8bc34a',
       fontStyle: 'bold', stroke: '#ffffff', strokeThickness: 3
     }).setOrigin(0.5);
 
     const title2 = this.add.text(W / 2, 175, '1982', {
       fontFamily: 'monospace', fontSize: '68px', color: '#ffffff',
-      fontStyle: 'bold', stroke: '#75AADB', strokeThickness: 4
+      fontStyle: 'bold', stroke: '#6a9a3a', strokeThickness: 4
     }).setOrigin(0.5);
 
     this.tweens.add({ targets: title1, scaleX: 1.03, scaleY: 1.03, duration: 1400, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
     this.tweens.add({ targets: title2, scaleX: 1.02, scaleY: 1.02, duration: 1600, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
 
     this.add.text(W / 2, 255, 'FUERZA AEREA ARGENTINA — 1982', {
-      fontFamily: 'monospace', fontSize: '16px', color: '#aaccff'
+      fontFamily: 'monospace', fontSize: '16px', color: '#aaccaa'
     }).setOrigin(0.5);
 
-    const startTxt = this.add.text(W / 2, 316, 'PRESS START', {
+    const startTxt = this.add.text(W / 2, 316, 'PRESIONA START', {
       fontFamily: 'monospace', fontSize: '30px', color: '#ffffff', fontStyle: 'bold'
     }).setOrigin(0.5);
     this.tweens.add({ targets: startTxt, alpha: 0, duration: 650, yoyo: true, repeat: -1 });
 
-    const lbTxt = this.add.text(W / 2, 360, 'HIGH SCORES', {
-      fontFamily: 'monospace', fontSize: '18px', color: '#c0dff0'
+    const lbTxt = this.add.text(W / 2, 360, 'PUNTAJES', {
+      fontFamily: 'monospace', fontSize: '18px', color: '#c0e8a0'
     }).setOrigin(0.5);
     this.tweens.add({ targets: lbTxt, alpha: 0.4, duration: 900, yoyo: true, repeat: -1 });
 
@@ -455,16 +455,16 @@ class TitleScene extends Phaser.Scene {
       fontFamily: 'monospace', fontSize: '20px', color: '#FFD700'
     }).setOrigin(0.5);
 
-    this.add.text(W / 2, 438, 'MOVE: WASD   FIRE: U   BOMB: I', {
-      fontFamily: 'monospace', fontSize: '14px', color: '#888888'
+    this.add.text(W / 2, 438, 'MOVER: WASD   DISPARAR: U   BOMBA: I', {
+      fontFamily: 'monospace', fontSize: '14px', color: '#889977'
     }).setOrigin(0.5);
 
-    this.add.text(W / 2, 458, 'DESTROY HARRIERS, BOMBERS & BOSS BOMBERS', {
-      fontFamily: 'monospace', fontSize: '13px', color: '#666666'
+    this.add.text(W / 2, 458, 'DESTRUYE CAZAS, BOMBARDEROS Y JEFES', {
+      fontFamily: 'monospace', fontSize: '13px', color: '#667755'
     }).setOrigin(0.5);
 
-    this.add.text(W / 2, 480, 'BOMB: VIEW HIGH SCORES', {
-      fontFamily: 'monospace', fontSize: '12px', color: '#555577'
+    this.add.text(W / 2, 480, 'BOMBA: VER PUNTAJES', {
+      fontFamily: 'monospace', fontSize: '12px', color: '#556644'
     }).setOrigin(0.5);
 
     const deco = this.add.graphics();
@@ -577,11 +577,11 @@ class GameScene extends Phaser.Scene {
     this.playerY = H - 80;
     this.playerGfx = this.add.graphics().setDepth(10);
 
-    this.hudScore = this.add.text(10, 10, 'SCORE: 000000', {
+    this.hudScore = this.add.text(10, 10, 'PUNTOS: 000000', {
       fontFamily: 'monospace', fontSize: '18px', color: '#ffffff'
     }).setDepth(20);
 
-    this.hudHS = this.add.text(10, 32, 'BEST: 000000', {
+    this.hudHS = this.add.text(10, 32, 'MEJOR: 000000', {
       fontFamily: 'monospace', fontSize: '14px', color: '#FFD700'
     }).setDepth(20);
 
@@ -593,7 +593,7 @@ class GameScene extends Phaser.Scene {
       fontFamily: 'monospace', fontSize: '14px', color: '#FF9900'
     }).setOrigin(1, 0).setDepth(20);
 
-    this.hudWave = this.add.text(W / 2, H - 20, 'WAVE 1', {
+    this.hudWave = this.add.text(W / 2, H - 20, 'RONDA 1', {
       fontFamily: 'monospace', fontSize: '14px', color: '#aaaaaa'
     }).setOrigin(0.5).setDepth(20);
 
@@ -608,14 +608,14 @@ class GameScene extends Phaser.Scene {
     hudLine.beginPath(); hudLine.moveTo(0, 58); hudLine.lineTo(W, 58); hudLine.strokePath();
 
     this.pauseBg = this.add.rectangle(W / 2, H / 2, W, H, 0x000000, 0.75).setDepth(30).setVisible(false);
-    this.pauseTxt = this.add.text(W / 2, H / 2, 'PAUSED\n\nPRESS START TO RESUME', {
+    this.pauseTxt = this.add.text(W / 2, H / 2, 'PAUSA\n\nPRESS START PARA CONTINUAR', {
       fontFamily: 'monospace', fontSize: '38px', color: '#ffffff',
       fontStyle: 'bold', align: 'center'
     }).setOrigin(0.5).setDepth(31).setVisible(false);
 
     loadHS().then(hs => {
       this.highScore = hs;
-      this.hudHS.setText(`BEST: ${String(hs).padStart(6, '0')}`);
+      this.hudHS.setText(`MEJOR: ${String(hs).padStart(6, '0')}`);
     });
 
     this.updateHUD();
@@ -756,10 +756,10 @@ class GameScene extends Phaser.Scene {
   }
 
   updateHUD() {
-    this.hudScore.setText(`SCORE: ${String(this.score).padStart(6, '0')}`);
+    this.hudScore.setText(`PUNTOS: ${String(this.score).padStart(6, '0')}`);
     this.hudRight.setText('< '.repeat(this.lives));
     this.hudBombs.setText(`B:${this.bombs}`);
-    this.hudWave.setText(`WAVE ${this.wave}`);
+    this.hudWave.setText(`RONDA ${this.wave}`);
     const powers = [];
     if (this.spreadShot) powers.push('SPREAD');
     if (this.speedBoost) powers.push('FAST');
@@ -882,7 +882,7 @@ class GameScene extends Phaser.Scene {
     g.x = W / 2; g.y = -80;
     this.boss = { g, x: W / 2, y: -80, t: 0, fireTimer: 2200, maxHP };
     playSound('boss');
-    const warn = this.add.text(W / 2, H / 2, '! BOSS BOMBER INCOMING !', {
+    const warn = this.add.text(W / 2, H / 2, '¡ BOMBARDERO JEFE ENTRANTE !', {
       fontFamily: 'monospace', fontSize: '26px', color: '#FF2222', fontStyle: 'bold'
     }).setOrigin(0.5).setDepth(25);
     this.tweens.add({ targets: warn, alpha: 0, delay: 1200, duration: 800, onComplete: () => warn.destroy() });
@@ -904,7 +904,7 @@ class GameScene extends Phaser.Scene {
       ringTimer: Math.max(1800, 2800 - round * 200)
     };
     playSound('boss');
-    const warn = this.add.text(W / 2, H / 2, '! IRON LADY INCOMING !', {
+    const warn = this.add.text(W / 2, H / 2, '¡ IRON LADY ENTRANTE !', {
       fontFamily: 'monospace', fontSize: '26px', color: '#ff4466', fontStyle: 'bold'
     }).setOrigin(0.5).setDepth(25);
     this.tweens.add({ targets: warn, alpha: 0, delay: 1400, duration: 700, onComplete: () => warn.destroy() });
@@ -1026,7 +1026,7 @@ class GameScene extends Phaser.Scene {
   }
 
   showWaveTransition(waveNum) {
-    const t = this.add.text(W / 2, H / 2, `WAVE ${waveNum}`, {
+    const t = this.add.text(W / 2, H / 2, `RONDA ${waveNum}`, {
       fontFamily: 'monospace', fontSize: '28px', color: '#c0dff0', fontStyle: 'bold'
     }).setOrigin(0.5).setDepth(26).setAlpha(0);
     this.tweens.add({
@@ -1038,7 +1038,7 @@ class GameScene extends Phaser.Scene {
   }
 
   showBossWarning() {
-    const t = this.add.text(W / 2, H / 2 - 20, 'WARNING', {
+    const t = this.add.text(W / 2, H / 2 - 20, '¡ALERTA!', {
       fontFamily: 'monospace', fontSize: '42px', color: '#ee3333', fontStyle: 'bold'
     }).setOrigin(0.5).setDepth(26);
     this.time.addEvent({ delay: 333, repeat: 5, callback: () => t.setVisible(!t.visible) });
@@ -1376,7 +1376,7 @@ class GameScene extends Phaser.Scene {
     this.bossTimer = 0;
     this.bossWarning = false;
     this.wave = Math.min(this.wave + 1, 12);
-    const msg = isThatcher ? 'IRON LADY DEFEATED!' : 'BOSS BOMBER DOWN!';
+    const msg = isThatcher ? '¡IRON LADY DERROTADA!' : '¡BOMBARDERO DERRIBADO!';
     const col = isThatcher ? '#ff88bb' : '#FFD700';
     const txt = this.add.text(W / 2, H / 2 - 40, msg, {
       fontFamily: 'monospace', fontSize: '36px', color: col, fontStyle: 'bold'
@@ -1427,7 +1427,7 @@ class GameOverScene extends Phaser.Scene {
     }).setOrigin(0.5);
     this.tweens.add({ targets: goTxt, scaleX: 1.04, scaleY: 1.04, duration: 900, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
 
-    this.add.text(W / 2, 230, `SCORE: ${String(this.finalScore).padStart(6, '0')}`, {
+    this.add.text(W / 2, 230, `PUNTAJE: ${String(this.finalScore).padStart(6, '0')}`, {
       fontFamily: 'monospace', fontSize: '30px', color: '#ffffff', fontStyle: 'bold'
     }).setOrigin(0.5);
 
@@ -1442,16 +1442,16 @@ class GameOverScene extends Phaser.Scene {
       fontFamily: 'monospace', fontSize: '20px', color: '#FFD700'
     }).setOrigin(0.5);
 
-    const retry = this.add.text(W / 2, 420, 'PRESS START TO RETRY', {
+    const retry = this.add.text(W / 2, 420, 'PRESIONA START PARA REINTENTAR', {
       fontFamily: 'monospace', fontSize: '24px', color: '#ffffff', fontStyle: 'bold'
     }).setOrigin(0.5);
     this.tweens.add({ targets: retry, alpha: 0, duration: 700, yoyo: true, repeat: -1 });
 
-    this.add.text(W / 2, 490, 'PRESS P1 FIRE TO RETURN TO TITLE', {
+    this.add.text(W / 2, 490, 'P1 DISPARAR: VOLVER AL INICIO', {
       fontFamily: 'monospace', fontSize: '14px', color: '#666666'
     }).setOrigin(0.5);
 
-    this.add.text(W / 2, 514, 'PRESS BOMB TO VIEW HIGH SCORES', {
+    this.add.text(W / 2, 514, 'BOMBA: VER PUNTAJES', {
       fontFamily: 'monospace', fontSize: '14px', color: '#555577'
     }).setOrigin(0.5);
 
@@ -1510,11 +1510,11 @@ class InitialsScene extends Phaser.Scene {
     }).setOrigin(0.5);
     this.tweens.add({ targets: nhsTxt, alpha: 0.3, duration: 400, yoyo: true, repeat: -1 });
 
-    this.add.text(W / 2, 228, `SCORE: ${String(this.finalScore).padStart(6, '0')}`, {
+    this.add.text(W / 2, 228, `PUNTAJE: ${String(this.finalScore).padStart(6, '0')}`, {
       fontFamily: 'monospace', fontSize: '24px', color: '#ffffff'
     }).setOrigin(0.5);
 
-    this.add.text(W / 2, 278, 'ENTER YOUR INITIALS', {
+    this.add.text(W / 2, 278, 'INGRESA TUS INICIALES', {
       fontFamily: 'monospace', fontSize: '18px', color: '#aaccff'
     }).setOrigin(0.5);
 
@@ -1526,7 +1526,7 @@ class InitialsScene extends Phaser.Scene {
       }).setOrigin(0.5).setDepth(6)
     );
 
-    this.add.text(W / 2, 428, 'UP/DOWN: CHANGE   FIRE: CONFIRM', {
+    this.add.text(W / 2, 428, 'ARRIBA/ABAJO: CAMBIAR   DISPARAR: CONFIRMAR', {
       fontFamily: 'monospace', fontSize: '14px', color: '#666666'
     }).setOrigin(0.5);
 
@@ -1595,7 +1595,7 @@ class LeaderboardScene extends Phaser.Scene {
       bg.fillRect(Phaser.Math.Between(0, W), Phaser.Math.Between(0, H), 2, 2);
     }
 
-    this.add.text(W / 2, 42, 'TOP SCORES', {
+    this.add.text(W / 2, 42, 'MEJORES PUNTAJES', {
       fontFamily: 'monospace', fontSize: '42px', color: '#c0dff0', fontStyle: 'bold',
       stroke: '#ffffff', strokeThickness: 2
     }).setOrigin(0.5);
@@ -1607,7 +1607,7 @@ class LeaderboardScene extends Phaser.Scene {
       loadLB().then(lb => { this.lb = lb; this.renderEntries(); });
     }
 
-    const pressTxt = this.add.text(W / 2, H - 36, 'PRESS START TO CONTINUE', {
+    const pressTxt = this.add.text(W / 2, H - 36, 'PRESIONA START PARA CONTINUAR', {
       fontFamily: 'monospace', fontSize: '20px', color: '#ffffff'
     }).setOrigin(0.5);
     this.tweens.add({ targets: pressTxt, alpha: 0, duration: 600, yoyo: true, repeat: -1 });
@@ -1617,7 +1617,7 @@ class LeaderboardScene extends Phaser.Scene {
     if (this.rendered) return;
     this.rendered = true;
     if (!this.lb || this.lb.length === 0) {
-      this.add.text(W / 2, H / 2, 'NO SCORES YET', {
+      this.add.text(W / 2, H / 2, 'SIN PUNTAJES AUN', {
         fontFamily: 'monospace', fontSize: '20px', color: '#888888'
       }).setOrigin(0.5);
       return;
